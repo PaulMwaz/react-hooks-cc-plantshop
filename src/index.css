@@ -1,7 +1,7 @@
 .cards {
   display: grid; /* Switch to grid layout */
   grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-  gap: 20px; /* Maintain spacing between cards */
+  gap: 20px;
   padding: 20px;
   overflow: auto; /* Enable both horizontal and vertical scrolling */
   max-height: 100%; /* Optional: Set max height to trigger vertical scrolling */
@@ -65,26 +65,25 @@ header h1 span {
   color: white;
 }
 
-/* Updated Search Bar Styles */
 .searchbar {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%; /* Stretch to the full width of the screen */
-  padding: 10px 20px; /* Add padding for aesthetics */
-  box-sizing: border-box; /* Ensure padding doesn't affect total width */
-  justify-content: flex-start; /* Align elements to the left */
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  justify-content: flex-start;
 }
 
 #search-form {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%; /* Ensure the form spans the full width */
+  width: 100%;
 }
 
 #search-input {
-  flex: 1; /* Make the input grow to fill available space */
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
