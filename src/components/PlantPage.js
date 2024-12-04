@@ -17,6 +17,18 @@ function PlantPage() {
     setPlants([...plants, newPlant]);
   }
 
+  function handleUpdatePrice(updatedPlant) {
+    setPlants(
+      plants.map((plant) =>
+        plant.id === updatedPlant.id ? updatedPlant : plant
+      )
+    );
+  }
+
+  function handleDeletePlant(deletedPlantId) {
+    setPlants(plants.filter((plant) => plant.id !== deletedPlantId));
+  }
+
   const filteredPlants = plants.filter((plant) =>
     plant.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -25,7 +37,11 @@ function PlantPage() {
     <main>
       <NewPlantForm onAddPlant={handleAddPlant} />
       <Search setSearchQuery={setSearchQuery} />
-      <PlantList plants={filteredPlants} />
+      <PlantList
+        plants={filteredPlants}
+        onUpdatePrice={handleUpdatePrice}
+        onDeletePlant={handleDeletePlant}
+      />
     </main>
   );
 }

@@ -1,119 +1,104 @@
-:root {
-  --green: rgb(39, 189, 39);
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-h1 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.logo {
-  font-size: 1.5em;
-}
-
-.new-plant-form {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin: 20px;
-}
-
-.new-plant-form input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.new-plant-form button {
-  background-color: var(--green);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.searchbar {
-  width: 100%;
-  margin: 20px;
-}
-
-.searchbar label {
-  display: block;
-  font-weight: bold;
-}
-
-.searchbar input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid; /* Switch to grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px; /* Maintain spacing between cards */
   padding: 20px;
+  overflow: auto; /* Enable both horizontal and vertical scrolling */
+  max-height: 100%; /* Optional: Set max height to trigger vertical scrolling */
+  width: 100%; /* Optional: Ensure container width triggers horizontal scrolling if needed */
 }
 
 .card {
-  flex: 1 1 calc(50% - 20px);
+  width: 300px; /* Maintain card size */
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .card img {
   width: 100%;
   height: auto;
-  max-height: 300px; /* Ensures images don't grow too large */
-  object-fit: contain; /* Maintains aspect ratio while keeping the full image visible */
-  border-radius: 5px;
+  object-fit: cover; /* Ensure images fit inside cards */
+  border-radius: 10px;
 }
 
-.card h4 {
-  margin: 10px 0;
-  font-size: 1.25em;
+.new-plant-form,
+.searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
-.card p {
-  margin: 5px 0;
-  color: #555;
+header h1 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header h1 span {
+  font-size: 2em;
 }
 
 .card button {
   margin-top: 10px;
-  background-color: var(--green);
-  color: white;
-  border: none;
   padding: 10px;
   border-radius: 5px;
+}
+
+.card button:nth-child(1) {
+  background-color: blue;
+  color: white;
+}
+
+.card button:nth-child(2) {
+  background-color: red;
+  color: white;
+}
+
+.card button:nth-child(3) {
+  background-color: green;
+  color: white;
+}
+
+/* Updated Search Bar Styles */
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Stretch to the full width of the screen */
+  padding: 10px 20px; /* Add padding for aesthetics */
+  box-sizing: border-box; /* Ensure padding doesn't affect total width */
+  justify-content: flex-start; /* Align elements to the left */
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Ensure the form spans the full width */
+}
+
+#search-input {
+  flex: 1; /* Make the input grow to fill available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#search-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
   cursor: pointer;
 }
 
-.card button.sold-out {
-  background-color: red;
-}
-
-.card button:hover {
-  opacity: 0.9;
-}
-
-@media (min-width: 768px) {
-  .card {
-    flex: 1 1 calc(45% - 20px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .card {
-    flex: 1 1 calc(40% - 20px);
-  }
+#search-button:hover {
+  background-color: darkblue;
 }
